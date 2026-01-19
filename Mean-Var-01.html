@@ -1,0 +1,51 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<link href="160324.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">平均と分散</p>
+<p>平均と分散の定義は，かみ砕いて説明すると，<br />
+　平均：観測値の総和をその個数で割ったもの<br />
+　分散：観測地と平均値の差分の二乗の平均<br />
+と言えます．</p>
+<p>これを数学的に記述すると，</p>
+<p class="X-Large-RED">平均</p>
+<p>\( \Large     &lt;x&gt; = \frac{1}{n} \displaystyle \sum_{i=1}^n x_i \)</p>
+<p class="X-Large-RED">分散</p>
+<p>\( \Large     Variance = \frac{1}{n} \displaystyle \sum_{i=1}^n (x_i - \bar{x})^2 \)</p>
+<p>となります．</p>
+<p>分散の式は展開でき，</p>
+<p>\( \Large     \begin{eqnarray} Variance &amp;=&amp;\sqrt{\frac{1}{n} \displaystyle \sum_{i=1}^n (x_i - &lt;x&gt;)^2} \\<br>
+&amp;=&amp; \sqrt{\frac{1}{n} \displaystyle \sum_{i=1}^n \left( x_i^2 - 2 x_i &lt;x&gt; +&lt;x&gt;^2 \right)} \\<br>
+&amp;=&amp; \sqrt{\frac{1}{n} \displaystyle \sum_{i=1}^n  x_i^2 -  \frac{1}{n} \cdot 2 &lt;x&gt; \displaystyle \sum_{i=1}^n x_i  + \frac{1}{n} \displaystyle \sum_{i=1}^n &lt;x&gt;^2 } \\<br>
+&amp;=&amp; &lt;x&gt;^2 - 2 &lt;x&gt;^2 +&lt;x&gt;^2 \\<br>
+&amp;=&amp; &lt;x&gt;^2 -  &lt;x&gt;^2  \\<br>
+\end{eqnarray}  \) </p>
+<p>と置くことができます．</p>
+<p>&nbsp;</p>
+<p><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a><a href="mean-01.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+</body>
+</html>

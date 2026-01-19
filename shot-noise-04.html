@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shot Noise-04</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style10 {color: #000000; }
+.style3 {
+	color: #FF0000;
+	font-size: large;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="130819.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="style1">ショットノイズ-04</h1>
+<p class="Large-Bold-Blue">ショットノイズの場合</p>
+<p>ショットノイズの場合は，<a href="shot-noise-01.html">ここ</a>で記したように，</p>
+<p>\(\Large p &lt;&lt;q  \)</p>
+<p>\(\Large p+q=1  \)</p>
+<p>から，</p>
+<p>\(\Large q \fallingdotseq 1 \)</p>
+<p>となります．従って，</p>
+<p>\(\Large  \begin{align*} \sigma^2 &amp;= Npq \\<br />
+&amp;\fallingdotseq  Np \\<br />
+&amp;= &lt;n&gt; 
+\end{align*} \)</p>
+<p>従って，</p>
+<p>\(\Large \sqrt{\sigma^2} = \sqrt{&lt;n&gt;} \)</p>
+<p>となり，平均値の平方根となります．つまり，<br />
+　<span class="Large-Bold-Blue">平均値が大きくなると標準偏差値は大きくなる</span><br />
+のです． また，<span class="Large-Bold-Red">平均値に対する標準偏差の割合</span>は， </p>
+<p>\(\Large \frac{\sqrt{\sigma^2}}{&lt;n&gt;} = \frac{\sqrt{&lt;n&gt;}}{&lt;n&gt;} = \frac{1}{\sqrt{&lt;n&gt;}} \)</p>
+<p>となり，平均値が大きくなれば（Nが増えれば）標準偏差値の割合は減少します．</p>
+<p>つまり，<br />
+　平均値＝分散値<br />
+となります．</p>
+<p>これって，どこかで見たことあるような．．．．．</p>
+<p>そうです，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Poisson-06.html" class="X-Large-Bold-RED">ポアソン分布</a>，なのです．</p>
+<p>ポアソン分布も，n &lt;&lt; N，としているので，p &lt;&lt; q，と同じ状態を考えています．</p>
+<p>ショットノイズをポアソン分布で説明している<a href="http://physics.thick.jp/Experimental_Physics/Section1/1-18.html" target="_blank">サイト</a>もあります．</p>
+<p>次ページでは，<span class="Large-Bold-Blue">ショットノイズの割合</span>を実際にシミュレートしていきましょう．</p>
+<p><span class="style10"><a href="shot-noise-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="shot-noise-05.html"><img src="R-arrow.png" alt="r" width="57" height="34" border="0" /></a></p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Var-01</title>
+<style type="text/css">
+.style1 {color: #0000FF}
+.style7 {color: #000000; }
+</style>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="style1">なぜ，分散，標準偏差の計算に，ｎ－１，が使われるのか？-01</h1>
+<p>実分散，標準偏差の計算によく，ｎ－１，の値が使われます．<br />
+何となくそういうものだ，と使ったり，できるだけ値を小さくするために，ｎ，を使ったり，まあｎが大きくなれば，その差は小さくなるので，使ったり使わなかったりということがほとんどと思いますが，一度きちんと考えてみましょう．</p>
+<p>さて，まずは参考したサイトを列挙します．<br />
+　<a href="http://elsur.jpn.org/resource/anova.pdf" target="_blank">読めば必ずわかる分散分析の基礎</a>　（<a href="http://elsur.jpn.org/" target="_blank">elsur.jpn.org</a>）<br />
+　<a href="https://www.google.co.jp/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CDIQFjAA&amp;url=http%3A%2F%2Fwww.kosugitti.net%2Flabo%2Fest.pdf&amp;ei=-LZPUcyxKoa_kgXSg4CoBQ&amp;usg=AFQjCNFttQaII2UScDKcFczpNil5IxflIQ&amp;sig2=LJmGJ5MlKZTXvfw71tKMZA&amp;bvm=bv.44158598,d.dGI" target="_blank">なぜ不偏分散はN-1 で割るのか</a>　（<a href="https://sites.google.com/site/kosugitti/" target="_blank">山口大学教育学部小杉研究室</a>）<br />
+　<a href="http://www.kwansei.ac.jp/hs/z90010/sugakuc/toukei/variance/variance.htm" target="_blank">母分散の推定(n-1で割る理由)</a>　（<a href="http://www.kwansei.ac.jp/hs/z90010/hyousi/2106.htm" target="_blank">関西学院高等部 教諭：丹羽時彦</a>）</p>
+<p>を寄せ集めてまとめてみました．</p>
+<p>まずは，基本から，<br />
+　データが，x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, x<sub>4</sub>, .....x<sub>n</sub>,<br />
+あった場合に，</p>
+<p>・　平均<br />
+<img src="Var-01.gif" width="197" height="90" /></p>
+<p>・　分散</p>
+<p><img src="Var-02.gif" width="182" height="90" /></p>
+<p>・　標準偏差</p>
+<p><img src="Var-03.gif" width="227" height="100" /></p>
+<p>つまり，</p>
+<p><img src="Var-04.gif" width="237" height="50" /></p>
+<p>となるわけです．</p>
+<p>ここまではあくまで理想的な系で，実際の実験では，全ての情報を得ることはできず，ごくごく一部のサンプルのみから全体を推定しなくてはなりません．<br />
+たとえば，視聴率調査などは全世帯の調査はできませんよね．．</p>
+<p>また，分母を見ると，すべて，ｎ，ですよね？<br />
+表題にあるように，ｎ－１，ではありません．</p>
+<p>次にここを重点的に考えていきましょう．</p>
+<p><br />
+<span class="style7"><a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Var-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Var-05</title>
+<style type="text/css">
+.style1 {color: #0000FF}
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">なぜ，分散，標準偏差の計算に，ｎ－１，が使われるのか？-05</h1>
+<p>単純な例として，<br />
+　０～１<span class="Large-Bold-RED"></span>の間でランダムに数字を発生させ，平均，分散を求める<br />
+を行ってみましょう．</p>
+<p>平均，分散は，計算から，</p>
+<p>・　平均</p>
+<p><img src="Var-17.gif" width="385" height="100" /></p>
+<p>・　分散</p>
+<p><img src="Var-18.gif" width="305" height="512" /></p>
+<p>となります．</p>
+<p>シミュレーションとしては，LabView，を用いて，<br />
+　乱数を多数発生させる<br />
+　そこから一部を取り出し，平均，分散を出す<br />
+　この作業を多数行い，平均（平均の平均，分散の平均）を導き出す<br />
+という作業を行ってみましょう．</p>
+<p>その結果，</p>
+<p><img src="Var-3.jpg" width="533" height="277" /></p>
+<p>となり，やはり，n-1，の方が正しい値となりますね．<br />
+</p>
+<p>シミュレーションプログラムを，<a href="Var-130325.vi" target="_blank">こちら</a>，に置いておきますので，参考にしてみてください．</p>
+<p><br />
+  <span class="style7"><a href="Var-04.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+</body>
+</html>

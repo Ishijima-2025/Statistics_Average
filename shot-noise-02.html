@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shot Noise-02</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style10 {color: #000000; }
+.style3 {
+	color: #FF0000;
+	font-size: large;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="130819.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="style1">ショットノイズ-02</h1>
+<p class="Large-Bold-Blue">平均値</p>
+<p>平均値は，</p>
+<p>\(\Large  \begin{align*} &lt;n&gt; &amp;= \displaystyle \sum_{ n=0 }^{N} P_{N} (n) \cdot n \\<br />  
+  &amp;=  \sum_{ n=0 }^{N} \frac{N!}{(N-n)! \ n!} p^{n} \ q^{N-n} \cdot n  \end{align*} \)</p>
+<p>となります．</p>
+<p>\(\Large n \ p^n = p \ \frac{\partial  }{ \partial p } (p^n)  \)</p>
+<p>より，\(\Large  \left( \frac{\partial  }{ \partial p } (p^n)  = n \ p^{n-1} \right) \)</p>
+<p>\(\Large  \begin{align*} &lt;n&gt; &amp;= \displaystyle \sum_{ n=0 }^{N} \frac{N!}{(N-n)! \ n!} \left[p \ \frac{\partial  }{ \partial p } (p^n) \right] \ q^{N-n} \\<br /> 
+  &amp;= p \ \frac{\partial  }{ \partial p } \left[ \sum_{ n=0 }^{N} \frac{N!}{(N-n)! \ n!} p^{n} \ q^{N-n} \right] \\<br />
+  &amp;= 
+p \ \frac{\partial  }{ \partial p } (p+q)^{N-1} \\<br />
+&amp;= Np  \end{align*} \)</p>
+<p>となり，平均は，Np，となります．</p>
+<p>ここで，ｑ＝１－ｐ，だからｐの関数では？ｑも微分しなくていいの？</p>
+<p>と疑問が出ますが，たぶん．．．私の理解では，<br />
+  <span class="Blue-Bold">　n p<sup>n</sup> を微分の形に変えているので，ｑはそのままである<br />
+  　便宜上微分を一番前に出したが，カギカッコ内のｑには微分はかかっていない</span><br />
+という理解でいいのでは，と思います．</p>
+<p>次ページでは，<span class="Large-Bold-Blue">分散値</span>を求めていきましょう．</p>
+<p><span class="style10"><a href="shot-noise-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="shot-noise-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" border="0" /></a></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Var-04</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style1 {color: #0000FF}
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">なぜ，分散，標準偏差の計算に，ｎ－１，が使われるのか？-04</h1>
+<p>では，本題である，<span class="Large-Bold-RED">実際の実験で得られた分散値，s<sup>2</sup></span>，を考えていきましょう．</p>
+<p><img src="Var-07.gif" width="225" height="90" /></p>
+<p>1/n，を除いた部分だけ考えていくと（後で期待値を求めるので，今ｎで割る必要はない），</p>
+<p><img src="Var-13.gif" width="607" height="760" /><br />
+</p>
+<p>となります．</p>
+<p><span class="Large-Bold-Blue">第一項の期待値</span>は，<a href="Var-03.html">前ページ</a>の，ずれの二乗の期待値を使って，</p>
+<p><img src="Var-14.gif" width="830" height="200" /></p>
+<p>となります．<br />
+<span class="Large-Bold-Blue">第二項の期待値</span>は，<a href="Var-03.html">前ページ</a>の，平均値の散らばり，から，</p>
+<p><img src="Var-15.gif" width="397" height="207" /></p>
+<p>となります．従って，</p>
+<p><img src="Var-16.gif" width="440" height="155" /></p>
+<p>と<span class="Large-Bold-RED">標本の散らばりは，n-1，で割る</span>こととなります．このことを，<span class="Large-Bold-RED">不偏分散</span>，と呼びます．</p>
+<p>では，実際に，n-1，で計算するとどうなるかを次ページで考えていきましょう．</p>
+<p><br />
+<span class="style7"><a href="Var-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Var-05.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

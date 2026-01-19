@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shot Noise-01</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style10 {color: #000000; }
+.style3 {
+	color: #FF0000;
+	font-size: large;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="130819.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="style1">ショットノイズ-01</h1>
+<p class="Large-Bold-Blue">光のフォトンノイズ（ショットノイズ）</p>
+<p>光のフォトンノイズに関する情報はいろいろなサイトに記載されています．例えば，<a href="http://hyperbolaoptics.com/2016/09/28/3ショットノイズ（フォトンノイズ）とは何か？/" target="_blank">ここ</a>，<a href="http://physics.thick.jp/Experimental_Physics/Section1/1-18.html" target="_blank">ここ</a>，いずれも，</p>
+<p>\(\Large  SNR =  \frac{N}{\sqrt{N}}=\sqrt{N} \)</p>
+<p>と記載されています（SNR= Signal to Noise Ratio).</p>
+<p>これは，前提として，<br />
+　光子がポツポツと降ってくる<br />
+　たまに来る<br />
+　ランダムに来る<br />
+というものを考えます（雨の降り始めをイメージしてもらえればいいのかもしれません）．</p>
+<p>これをグラフで描くと，</p>
+<p><img src="shot-noise-01.jpg" width="466" height="128" alt=""/></p>
+<p>こんな感じでしょうか？</p>
+<p>さらに，反応式で記述すると，</p>
+<p>\(\Large OFF  \longleftrightarrow ON \)</p>
+<p>となります．これってまるで，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Autocorrelation-01.html">ランダム過程における自己相関関数について-01</a>，と同じ形ですね．</p>
+<p>たまにしか光子がやってこない（OFF＞ON）状態でありますが．</p>
+<p>このようなランダムな過程が，<br />
+　独立に<br />
+　複数個<br />
+やってきた場合を考えましょう．ここで，</p>
+<p class="Red-Bold">　トータルの数　：　N<br />
+  　ON状態に存在する数　：　ｎ<br />
+　ON状態に存在する確率　：　ｐ<br />
+　OFF状態に存在する確率　：　ｑ＝１－ｐ</p>
+<p>とします．  ここで，\(\Large p+q=1  \)，です．</p>
+<p>N個のうち，ON状態にｎ個存在する確率は，二項定理を使って，</p>
+<p>\(\Large P_{N} (n) = \frac{N!}{(N-n)! \ n!} p^{n} \ q^{N-n}  \)</p>
+<p>となります．</p>
+<p>次ページでは，<span class="Large-Bold-Blue">平均値</span>を求めていきましょう．</p>
+<p>&nbsp;</p>
+<p><span class="style10"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="shot-noise-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" border="0" /></a></p>
+</body>
+</html>

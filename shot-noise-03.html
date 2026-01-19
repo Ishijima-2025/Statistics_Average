@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shot Noise-03</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style10 {color: #000000; }
+.style3 {
+	color: #FF0000;
+	font-size: large;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="130819.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="style1">ショットノイズ-03</h1>
+<p class="Large-Bold-Blue">分散値</p>
+<p>分散値は，<a href="http://www.fbs.osaka-u.ac.jp/labs/ishijima/Mean-Var-01.html">ここ</a>で記したように，</p>
+<p>\(\Large \sigma^2 = &lt;x^2&gt;-&lt;x&gt;^2  \)</p>
+<p>から，&lt;x<sup>2</sup>&gt;を求めれば解くことができます．</p>
+<p>\(\Large  \begin{align*} &lt;n^2&gt; &amp;= \displaystyle \sum_{ n=0 }^{N} P_{N} (n) \cdot n^2 \\<br />  
+  &amp;=  \sum_{ n=0 }^{N} \frac{N!}{(N-n)! \ n!} p^{n} \ q^{N-n} \cdot n^2  \end{align*} \)</p>
+<p>となります．</p>
+<p>\(\Large n^2 \ p^n = n \left( p \ \frac{\partial  }{ \partial p } \right) (p^n)  = \left( p \ \frac{\partial  }{ \partial p } \right)^2 \left( p^n \right) \)</p>
+<p>より，</p>
+<p>\(\Large  \begin{align*} &lt;n^2&gt; &amp;= \displaystyle \sum_{ n=0 }^{N} \frac{N!}{(N-n)! \ n!} \left( p \ \frac{\partial  }{ \partial p } \right)^2 p^n \ q^{N-n} \\<br /> 
+  &amp;= \left( p \ \frac{\partial  }{ \partial p } \right)^2 \left[ \sum_{ n=0 }^{N} \frac{N!}{(N-n)! \ n!} p^{n} \ q^{N-n} \right] \\<br />
+  &amp;= 
+\left( p \ \frac{\partial  }{ \partial p } \right)^2 (p+q)^{N} \\<br />
+&amp;= 
+\left( p \ \frac{\partial  }{ \partial p } \right) \ pN\ (p+q)^{N-1} \\<br />
+&amp;= p \left[ N (p+q)^{N-1} + pN \ (N-1) \ (p+q)^{N-2} \right] \\<br />
+&amp;= p \left[ N+pN \ (N-1) \right] \\<br />
+&amp;= Np \ \left[ 1+pN-p \right] \\<br />
+&amp;= (Np)^2 + Npq \end{align*} \)</p>
+<p>となります．</p>
+<p>\(\Large \sigma^2 = &lt;n^2&gt;-&lt;n&gt;^2  \)</p>
+<p>から，</p>
+<p>\(\Large  \begin{align*} \sigma^2 &amp;= &lt;n^2&gt;-&lt;n&gt;^2 \\<br />
+&amp;= (Np)^2 + Npq - (Np)^2 \\<br />
+&amp;= Npq 
+\end{align*} \)</p>
+<p>&nbsp;</p>
+<p>次ページでは，<span class="Large-Bold-Blue">ショットノイズの場合</span>を考えていきましょう．</p>
+<p><span class="style10"><a href="shot-noise-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="shot-noise-04.html"><img src="R-arrow.png" alt="r" width="57" height="34" border="0" /></a></p>
+</body>
+</html>

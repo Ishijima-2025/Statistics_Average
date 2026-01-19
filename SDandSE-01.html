@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style1 {color: #0000FF}
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">標準偏差と標準誤差</h1>
+<p>さて，一般によく使われるのが，<span class="Large-Bold-RED">標準偏差（S.D.)</span>，ですが，<br />
+　<span class="Large-Bold-RED">標準誤差（S.E.)</span><br />
+というものもあります，その関係は，</p>
+<p><img src="SDandSE-01.gif" width="140" height="82" /></p>
+<p>です．Nは試行回数，です．<br />
+ではいったい何が違うのでしょう？</p>
+<p><span class="Large-Bold-RED">・標準偏差</span><br />
+これは，<br />
+　<span class="X-Large-Blue">得られたデータがどのくらい散らばっているか</span><br />
+と言うもので，散らばりぐらいの程度を示します．<br />
+この散らばりは，データ数，試行回数，に依存しません．</p>
+<p>たとえば，<br />
+　インクを水の中に垂らし，一定時間後のインクの分布<br />
+を考えると，垂らしたインクの量に依存しないことが直感的にわかりますね．</p>
+<p><span class="Large-Bold-RED">・標準誤差</span><br />
+  それに対して，標準誤差は，<br />
+　<span class="X-Large-Blue">繰り返し試行（実験）した際，その平均値がどの程度の確度を持っているか</span><br />
+というものです．<br />
+誤差を含む実験の場合，得られたデータにばらつきを生じます．<br />
+目的とする推定値は平均，として見積もるのですが，<br />
+　少ない試行回数より多い試行回数の方が確実性を増す<br />
+というのも直感的に理解できると思います．<br />
+それが，分母のルートN，に効いてくるわけです．</p>
+<p>つまり，<br />
+　100回試行すれば，その信頼性は10倍に<br />
+　10,000回試行すれば,その信頼性は100倍に<br />
+上がるわけです．</p>
+<p>では，なぜ？ルートNなのでしょうか？</p>
+<p>この概念は思ったより簡単で，<span class="Large-Bold-RED">誤差伝搬法則</span>，より求めることができます．</p>
+<p>試行回数N回行い，その平均値は，</p>
+<p><img src="SDandSE-02.gif" width="257" height="77" /></p>
+<p>となります．<br />
+どの結果，xi，も同じ実験ですので，真の値Xは同じで，その分布σ，も同じです．<br />
+つまり，</p>
+<p><img src="SDandSE-03.gif" width="265" height="90" /></p>
+<p><br />
+ですので，<a href="http://www.tagen.tohoku.ac.jp/labo/ishijima/gosa-01.html">誤差伝搬法則</a>の加算，を使って， </p>
+<p><img src="gosa-12.gif" width="381" height="40" /></p>
+<p>これを拡張すれば，誤差は，</p>
+<p><img src="SDandSE-04.gif" width="272" height="272" /></p>
+<p>となるわけです．</p>
+<p>この議論は，<br />
+　<a href="http://www.tkd-pbl.com/book/b16224.html" target="_blank">誤差解析入門（東京化学同人）</a><br />
+を参考にさせていただきました．</p>
+<p><br />
+<span class="style7"><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+</body>
+</html>

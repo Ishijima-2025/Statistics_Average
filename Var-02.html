@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Var-02</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style1 {color: #0000FF}
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<h1 class="style1">なぜ，分散，標準偏差の計算に，ｎ－１，が使われるのか？-02</h1>
+<p>さて，実際の実験，調査では，全てのデータをサンプルするわけにはいきません．</p>
+<p><img src="Var-1.jpg" width="340" height="198" /></p>
+<p>ごく一部のみをサンプルして，全体の様子を調べるのです．<br />
+ここで，<br />
+　全体の集団＝母集団<br />
+　サンプルした集団＝標本<br />
+と定義して，それぞれの平均，分散を，<br />
+　母平均　：　μ<br />
+　母分散　：　σ<sup>2</sup><br />
+　標本平均　：　<img src="Var-05.gif" width="18" height="21" /><br />
+　標本分散　：　s<sup>2</sup><br />
+として，考えていきましょう．</p>
+<p>ここで，母集団の分散の推定量は，</p>
+<p><img src="Var-06.gif" width="232" height="90" /></p>
+<p>ですが，実際の実験で得られた分散値，s<sup>2</sup>，は，</p>
+<p><img src="Var-07.gif" width="225" height="90" /></p>
+<p>となり，本来の推定量，σ<sup>2</sup>，より小さくなる傾向があります．<br />
+この理由と対策を考えていきましょう．</p>
+<p>&nbsp;</p>
+<p><br />
+<span class="style7"><a href="Var-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Var-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+	
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">分散とその性質</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p class="Large-Bold-Red">・分散</p>
+<p>式で表すと，</p>
+<p>\( \Large     \begin{eqnarray} V[X] &amp;=&amp; \displaystyle \sum_{i=1}^n p_i \cdot x_i \\<br>
+  &amp;=&amp; E \left[ (X - \mu_X)^2 \right] \\
+    <br>
+    &amp;=&amp; 
+    \displaystyle \sum_{i=1}^n p_i \cdot (x_i - \mu_x )^2 \\<br>
+\end{eqnarray}  \)</p>
+<p>ここで，<span class="Red">μ</span>，は平均値を表します．<br>
+我々は一般的にはμは接頭語でマイクロ，を示しますが，統計では，meanのｍのギリシャ表記で使われるようです（紛らわしいですが．．）</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Red">分散に関する公式</span>は（<a href="https://manabitimes.jp/math/910" target="_blank">ここ</a>，を参考にしました），</p>
+<p class="Red-Bold">・係数</p>
+<p>\( \Large     \begin{eqnarray} V[a \cdot X] &amp;=&amp; \displaystyle \sum_{i=1}^n  p_i \cdot (a \cdot x_i - E[aX] )^2 \\<br>
+  &amp;=&amp;  \displaystyle \sum_{i=1}^n  p_i \cdot (a \cdot x_i - a \cdot \mu_x )^2 \\<br>
+  &amp;=&amp;  a^2 \cdot \displaystyle \sum_{i=1}^n  p_i \cdot ( x_i -  \mu_x )^2 \\  <br>
+  &amp;=&amp; a^2 \cdot V[X] \\  <br>
+\end{eqnarray}  \)</p>
+<p class="Red-Bold">・定数</p>
+<p>\( \Large     \begin{eqnarray} V[ X + a ] &amp;=&amp; \displaystyle \sum_{i=1}^n  p_i ( x_i + a - E[X+a])^2 \\<br>
+  &amp;=&amp; \displaystyle \sum_{i=1}^n  p_i ( x_i + a - ( \mu_x+a))^2 \\<br>
+  &amp;=&amp; \displaystyle \sum_{i=1}^n  p_i ( x_i  -  \mu_x)^2 \\<br>
+  &amp;=&amp;  V[X]  \\ <br>
+\end{eqnarray}  \)</p>
+<p>分散は，シフトしただけでは変化しない，ということですね</p>
+<p class="Red-Bold">・和　（ちょっとややこしい）</p>
+<p>\( \Large     \begin{eqnarray} V[ X + Y ] &amp;=&amp; \displaystyle \sum_{i=1}^n  p_i ( x_i + y_i-E[X+Y])^2 \\<br>
+  &amp;=&amp; \displaystyle \sum_{i=1}^n  p_i \left\{ x_i + y_i - (E[X]+E[Y]) \right\}^2 \\<br>
+  &amp;=&amp; \displaystyle \sum_{i=1}^n  p_i \{ (x_i - \mu_x) +( y_i - \mu_y) \}^2 \\  <br>
+  &amp;=&amp; \displaystyle \sum_{i=1}^n  p_i \{ (x_i - \mu_x)^2 +2(x_i - \mu_x) \cdot ( y_i - \mu_y) + ( y_i - \mu_y) \}^2 \\  <br>
+  &amp;=&amp; \displaystyle \sum_{i=1}^n  p_i  (x_i - \mu_x)^2 +2\displaystyle \sum_{i=1}^n (x_i - \mu_x) \cdot ( y_i - \mu_y) + \displaystyle \sum_{i=1}^n( y_i - \mu_y) \}^2 \\  <br>
+  &amp;=&amp;  V[X] + V[Y] + Cov[X,Y] \\ <br>
+  \end{eqnarray}  \)</p>
+<p>となります．ここで，Cov，とは共分散で，</p>
+<p>\( \Large     Cov[X,Y] = E[ (x_i - \mu_x) \cdot ( y_i - \mu_y)]\)</p>
+<p>です，X,Yが独立の場合，共分散は0となりますので（導出は，<a href="Cov-01.html">ここ</a>）</p>
+<p>\( \Large     V[X+Y] = V[X] + V[Y] \)</p>
+<p>となります．</p>
+<p>これはある意味，<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/gosa-03.html">誤差伝搬の法則の和</a>と同じですね．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="mean-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a><a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Cov-01.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
