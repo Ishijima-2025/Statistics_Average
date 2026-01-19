@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p><span class="Large-Bold-RED">直線近似の場合の誤差の推定の検証（その２）</span></p>
+<p>切片あり，なしでの結果は，</p>
+<p class="Red">切片あり</p>
+<p><img src="gosa-36.gif" width="240" height="70" /></p>
+<p class="Red">切片なし</p>
+<p><img src="gosa-38.gif" width="183" height="33" /></p>
+<p>となりましたが，この値が正しいか，検証しましょう．<br />
+残念ながらエクセルではそれぞれのパラメータの誤差の推定ができません．<br />
+ですので，他のソフト，Kyplot，Originで検証しましょう．</p>
+<p class="Blue"><strong>Kyplot</strong></p>
+<p>　フィット　→　統計/プロット　→　OK　</p>
+<p>で，パラメータ推定，漸近的標準誤差（SE），にそれぞれのパラメータの誤差が表示されます．<br />
+その結果は，</p>
+<p class="Large-Blue">切片あり　　　　　　　　　　　　　　　　　　　　　切片なし</p>
+<p><img src="gosa-02.png" width="259" height="71" />　　<img src="gosa-03.png" width="319" height="55" /></p>
+<p>となります．</p>
+<p class="Blue"><strong>Origin</strong></p>
+<p>　解析　→　フィット　→　線形フィット　</p>
+<p><span class="Large-Blue">切片あり　　　　　　　　　　　　　　　　　　　　　切片なし</span></p>
+<p><img src="gosa-04.png" width="314" height="69" /><img src="gosa-05.png" width="305" height="70" /></p>
+<p>と同じ結果となります．</p>
+<p><br />
+  ここで，注意しなくてはならないのが，標準誤差（SE），です．<br />
+ここで整理すると，</p>
+<p class="Large-Bold-RED">分散　＝　(標準偏差)<sup>2</sup><br />
+標準誤差　＝標準偏差÷（データ数）<sup>(1/2)</sup></p>
+<p>つまり，<br />
+<img src="gosa-39.gif" width="85" height="90" /></p>
+<p>ということなのですが．．．．この標準誤差の定義はあくまでNが大きい場合であって，正確には，</p>
+<p><img src="gosa-40.gif" width="135" height="58" /></p>
+<p>のようです，何でか．．は私は理解していません，<a href="http://www.env.nagasaki-u.ac.jp/sekkei/faculty/nakayosi/excel/yougo.html" target="_blank">ここ</a>のサイトを参考にしました．<br />
+ここで，ｐ，は独立変数の数です．<br />
+つまり，（たぶん．．），<span class="Large-Red">分母は，自由度の平方根</span>，であると思われるので，<br />
+　y=ax　：　自由度=5-1=4<br />
+　y=a+bx　：　自由度=5-2=3<br />
+となります．<br />
+この値を二つのソフトは採用しているようです．</p>
+<p>さて，実際に計算してみると，</p>
+<p class="Large-Bold-RED">・　y=a+bx</p>
+<p><img src="gosa-41.gif" width="190" height="203" /></p>
+<p class="Large-Bold-RED">・　y=ax</p>
+<p><img src="gosa-42.gif" width="176" height="100" /></p>
+<p>となり，見事一致しました（この独立変数，自由度に関しては，もう少し勉強しなくてはなりません．．．．）．</p>
+<p>以上が誤差伝搬法則を用いた誤差の推定となります．</p>
+<p><span class="style7"><a href="gosa-05.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+</body>
+</html>

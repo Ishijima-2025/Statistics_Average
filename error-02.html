@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Error-02</title>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style10 {color: #000000; }
+.style3 {
+	color: #FF0000;
+	font-size: large;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="130819.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="style1">誤差関数と正規分布-02</h1>
+<p><img src="error-04.gif" width="170" height="84" /></p>
+<p>を計算してみましょう．<br />
+変数変換を行い，</p>
+<p><img src="error-05.gif" width="164" height="386" /></p>
+<p>から，</p>
+<p><img src="error-06.gif" width="252" height="296" /></p>
+<p>を得ることができます．積分の項はまさしく誤差関数ですので，</p>
+<p><img src="error-07.gif" width="156" height="72" /><br />
+</p>
+<p>となります．</p>
+<p>実際に計算してみると，Wiki，などにも書かれているように，±1σ，±2σ，±3σ，の領域の割合は，</p>
+<table width="200" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>正規分布</td>
+    <td>誤差関数</td>
+  </tr>
+  <tr>
+    <td>±1σ</td>
+    <td>0.6827</td>
+    <td>0.68269</td>
+  </tr>
+  <tr>
+    <td>±2σ</td>
+    <td>0.9545</td>
+    <td>0.9545</td>
+  </tr>
+  <tr>
+    <td>±3σ</td>
+    <td>0.9973</td>
+    <td>0.9973</td>
+  </tr>
+</table>
+<p>と一致することがわかります（誤差関数は0からaまでの値なので，±を考慮するために2倍しますが）．</p>
+<p><span class="style10"><a href="Error-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+</body>
+</html>

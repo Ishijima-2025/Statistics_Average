@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="Large-Bold-RED">直線近似の場合の誤差の推定</p>
+<p>この誤差伝搬法則を使えば，2つ以上の変数がある近似であってもそれぞれのパラメータの誤差を推定することができるのです．</p>
+<p>さて，まずは線形近似の場合，<br />
+  <span class="Large-Bold-RED">　y=a+bx</span><br />
+を検討しましょう（<a href="http://www.tagen.tohoku.ac.jp/labo/ishijima/kinji-02.html">ここ</a>，とパラメータの設定が違いますが，<a href="http://staff.aist.go.jp/t.ihara/variance_deming.html" target="_blank">参考サイト</a>に準拠しました）．</p>
+<p>それぞれのパラメータ，a，bの推定値は，</p>
+<p><img src="gosa-20.gif" width="241" height="160" /></p>
+<p>となります．</p>
+<p>それぞれのパラメータの誤差は，</p>
+<p><img src="gosa-25.gif" width="125" height="113" /></p>
+<p>です（σはそれぞれのセットの誤差の和です）．<br />
+詳しい計算は，<a href="gosa-41.html">ここ</a>，にアップしました．</p>
+<p>ｙ切片がない場合には，<br />
+<span class="Large-Bold-RED">　y=ax</span><br />
+パラメータ推定値は，</p>
+<p><img src="gosa-26.gif" width="95" height="65" /></p>
+<p>となります（計算は，<a href="gosa-42.html">ここ</a>，で）．</p>
+<p>パラメータの誤差は，</p>
+<p><img src="gosa-27.gif" width="100" height="65" /></p>
+<p>となります．<br />
+詳しい計算は，<a href="gosa-43.html">ここ</a>，にアップしました．</p>
+<p>では，実際にこの計算が正しいかどうか検証してみましょう．</p>
+<p><span class="style7"><a href="gosa-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="gosa-05.html"><img src="R-arrow.png" alt="r" width="57" height="34" border="0" /></a></span></p>
+</body>
+</html>

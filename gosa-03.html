@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+	
+	<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<body>
+<p class="Large-Bold-RED">加減乗除などの誤差の見積もり</p>
+<p>では，実際に計算した結果をお示ししましょう．<br />
+</p>
+<p><span class="Large-Bold-Blue">・ n×(M<sub>1</sub>±ε<sub>1</sub>）</span> (実際の導出方法は，<a href="gosa-53.html">ここ</a>)</p>
+<p>\( \Large n \cdot ( M_1 \pm\varepsilon_1) = n \cdot  M_1 \pm n \cdot \varepsilon_1 \)</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue">・ n/(M<sub>1</sub>±ε<sub>1</sub>）</span><a href="gosa-53.html#gosa-02"></a> (実際の導出方法は，<a href="gosa-53.html#gosa-02">ここ</a>)</p>
+<p>\( \Large \frac{n}{ M_1 \pm \varepsilon_1} = \frac{n}{M_1} \pm \frac{n}{M_1^2} \cdot \varepsilon_1 \)</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue"><span class="Large-Bold-Blue">・ (M<sub>1</sub>±ε<sub>1</sub>）</span>±<span class="Large-Bold-Blue">(M<sub>2</sub>±ε<sub>2</sub>）</span></span><span class="Large-Bold-Blue"></span><a href="gosa-53.html#gosa-02"></a> (実際の導出方法は，<a href="gosa-53.html#gosa-03">ここ</a>)</p>
+<p>\( \Large  ( M_1 \pm\varepsilon_1) \pm ( M_2 \pm\varepsilon_2)= (  M_1 \pm M_2) \pm \sqrt{ \varepsilon_1^2 +\varepsilon_2^2 } \)</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue">・ (M<sub>1</sub>±ε<sub>1</sub>）×(M<sub>2</sub>±ε<sub>2</sub>）</span><span class="Large-Bold-Blue"></span>(実際の導出方法は，<a href="gosa-53.html#gosa-04">ここ</a>)</p>
+<p>\( \Large  ( M_1 \pm\varepsilon_1) \times ( M_2 \pm\varepsilon_2)= (  M_1 \times M_2) \pm \sqrt{ (M_2 \cdot \varepsilon_1)^2 + ( M_1 \cdot \varepsilon_2)^2 } \)</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue">・ (M<sub>1</sub>±ε<sub>1</sub>）/(M<sub>2</sub>±ε<sub>2</sub>）</span><span class="Large-Bold-Blue"></span>(実際の導出方法は，<a href="gosa-53.html#gosa-05">ここ</a>)</p>
+<p>&nbsp;</p>
+<p>\( \Large \frac{M_1 \pm \varepsilon_1}{ M_2 \pm \varepsilon_2} = \frac{M_1}{M_2} \pm \sqrt{\left( \frac{1}{M_2} \cdot \varepsilon_1 \right)^2 + \left( \frac{M_1}{M_2^2} \cdot \varepsilon_2 \right)^2 }\)</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue">・ (M<sub>1</sub>±ε<sub>1</sub>）<sup>(M2±ε2）</sup></span>(実際の導出方法は，<a href="gosa-53.html#gosa-06">ここ</a>)</p>
+<p>&nbsp;</p>
+<p>\( \Large (M_1 \pm \varepsilon_1)^{ M_2 \pm \varepsilon_2} = M_1^{M_2} \pm \sqrt{M_2 \cdot M_1^{M_2-1} \cdot \varepsilon_1 )^2 + ( log M_1 \cdot M_1^{M_2} \cdot \varepsilon_2 )^2 } \)</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue">・ {(M<sub>1</sub>±ε<sub>1</sub>）+(M<sub>2</sub>±ε<sub>2</sub>)}/</span><span class="Large-Bold-Blue">(M<sub>3</sub>±ε<sub>3</sub>)</span>(実際の導出方法は，<a href="gosa-53.html#gosa-07">ここ</a>)</p>
+<p>&nbsp;</p>
+<p>\( \Large \frac{(M_1 \pm \varepsilon_1)+(M_2 \pm \varepsilon_2)}{ M_3 \pm \varepsilon_3} = \frac{M_1+M_2}{M_3} \pm \sqrt{\left( \frac{1}{M_3} \cdot \varepsilon_1 \right)^2 +\left( \frac{1}{M_3} \cdot \varepsilon_2 \right)^2+ \left( \frac{M_1+M_2}{M_3^2} \cdot \varepsilon_3 \right)^2 }\)</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue">・ {(M<sub>1</sub>±ε<sub>1</sub>）×(M<sub>2</sub>±ε<sub>2</sub>)}/</span><span class="Large-Bold-Blue">(M<sub>3</sub>±ε<sub>3</sub>)</span>(実際の導出方法は，<a href="gosa-53.html#gosa-08">ここ</a>)</p>
+<p>&nbsp;</p>
+<p>\( \Large \frac{(M_1 \pm \varepsilon_1) \times (M_2 \pm \varepsilon_2)}{ M_3 \pm \varepsilon_3} = \frac{M_1\times M_2}{M_3} \pm \sqrt{\left( \frac{M_2}{M_3} \cdot \varepsilon_1 \right)^2 +\left( \frac{M_1}{M_3} \cdot \varepsilon_2 \right)^2+ \left( \frac{M_1 \cdot M_2}{M_3^2} \cdot \varepsilon_3 \right)^2 }\)</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue">・ (M<sub>1</sub>±ε<sub>1</sub>）/{(M<sub>2</sub>±ε<sub>2</sub>)+</span><span class="Large-Bold-Blue">(M<sub>3</sub>±ε<sub>3</sub>)}</span>(実際の導出方法は，<a href="gosa-53.html#gosa-09">ここ</a>)</p>
+<p>\( \Large \frac{ M_1 \pm \varepsilon_1}{(M_2 \pm \varepsilon_2)+(M_3 \pm \varepsilon_3)} = \frac{M_1}{M_2 + M_3} \pm \sqrt{\left( \frac{1}{M_2 + M_3} \cdot \varepsilon_1 \right)^2 +\left( \frac{M_1}{(M_2 + M_3)^2} \cdot \varepsilon_2 \right)^2+ \left( \frac{M_1}{(M_2+M_3)^2} \cdot \varepsilon_3 \right)^2 }\)</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue">・ (M<sub>1</sub>±ε<sub>1</sub>）/{(M<sub>2</sub>±ε<sub>2</sub>)×</span><span class="Large-Bold-Blue">(M<sub>3</sub>±ε<sub>3</sub>)}</span>(実際の導出方法は，<a href="gosa-53.html#gosa-10">ここ</a>)</p>
+<p>\( \Large \frac{ M_1 \pm \varepsilon_1}{(M_2 \pm \varepsilon_2)\times (M_3 \pm \varepsilon_3)} = \frac{M_1}{M_2 \times M_3} \pm \sqrt{\left( \frac{1}{M_2 \times M_3} \cdot \varepsilon_1 \right)^2 +\left( \frac{M_1}{M_2^2 \cdot  M_3} \cdot \varepsilon_2 \right)^2+ \left( \frac{M_1}{M_2 \cdot M_3^2} \cdot \varepsilon_3 \right)^2 }\)</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">・円柱</p>
+<p>円柱の直径をD，長さをL，質量をM，とすると体積Vと密度ρは，</p>
+<p>\( \Large V = \pi \left( \frac{D}{2} \right)^2 L \)</p>
+<p>\( \Large \rho = \frac{M}{\pi \left( \frac{D}{2} \right)^2 L} \)</p>
+<p>\( \Large  \delta V = V \sqrt{ \left(  2 \frac{\delta_D}{D}  \right)^2 + \left(   \frac{\delta_L}{L}  \right)^2 } 
+\)</p>
+<p>\( \Large  \delta \rho = \rho \sqrt{ \left(  2 \frac{\delta_D}{D}  \right)^2 + \left(   \frac{\delta_L}{L}  \right)^2 + \left(   \frac{\delta_M}{M}  \right)^2} \)</p>
+<p>(実際の導出方法は，<a href="cylinder.html">ここ</a>)</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">・円筒</p>
+<p>円筒の断面積は，外径をD，厚みをｔとすると，</p>
+<p>\( \Large S = \pi ( D-t )t  \)</p>
+<p>長さをL，質量をM，とすると体積Vと密度ρは，</p>
+<p>\( \Large V = \pi ( D-t )t L \)</p>
+<p>\( \Large \rho = \frac{M}{\pi ( D-t )t L} \)</p>
+<p>\( \Large  \delta V = V \sqrt{ \left( \frac{D}{D-1} \frac{\delta_D}{D} \right)^2 + \left(   \frac{\delta_L}{L}  \right)^2+ \left(   \frac{D-2t}{D-t} \frac{\delta_t}{t} \right)^2 }  \)</p>
+<p>\( \Large  \delta \rho = \rho \sqrt{ \left(   \frac{\delta_M}{M}  \right)^2 + \left(   \frac{\delta_L}{L}  \right)^2 + \left(   \frac{D}{D-t} \frac{\delta_D}{D}  \right)^2 + \left(   \frac{D-2t}{D-t} \frac{\delta_t}{t}  \right)^2}  \)</p>
+<p>D &gt;&gt; tのときは，</p>
+<p>\( \Large  \delta V \simeq  V \sqrt{ \left(  \frac{\delta_D}{D} \right)^2 + \left(   \frac{\delta_L}{L}  \right)^2+  \left(\frac{\delta_t}{t} \right)^2 }  \)</p>
+<p>\( \Large  \delta \rho = \rho \sqrt{ \left(   \frac{\delta_M}{M}  \right)^2 + \left(   \frac{\delta_L}{L}  \right)^2 + \left(    \frac{\delta_D}{D}  \right)^2 + \left(   \frac{\delta_t}{t}  \right)^2}  \)</p>
+<p>(実際の導出方法は，<a href="pipe.html">ここ</a>)</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="gosa-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="gosa-04.html"><img src="R-arrow.png" alt="r" width="57" height="34" border="0" /></a></span></p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue"></span></p>
+</body>
+</html>

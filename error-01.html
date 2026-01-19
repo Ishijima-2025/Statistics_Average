@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Error-01</title>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style10 {color: #000000; }
+.style3 {
+	color: #FF0000;
+	font-size: large;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="130819.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1 class="style1">誤差関数と正規分布-01</h1>
+<p>誤差関数と正規分布，ほとんど兄弟のような関係ですが，その対応についてはあまり語られていない気が．．．．<br />
+一応，Wikiなどでも，<br />
+　一連の何らかの測定値が正規分布になっていて、標準偏差が \sigma、期待値が0の場合、1つの測定値の誤差が-aとaの間になる確率は．．．．<br />
+と書かれていますが，結構あっさりと．．．</p>
+<p>ですので，ここでは両者の対応をきちんと考えていきましょう．<br />
+<span class="Large-Bold-Red">誤差関数</span>とは，</p>
+<p><img src="error-01.gif" width="206" height="80" /></p>
+<p><span class="Large-Bold-Red">正規分布</span>とは，</p>
+<p><img src="error-02.gif" width="126" height="78" /></p>
+<p>であり，誤差関数の指数部分と正規分布の指数部分はよく似ていますね．<br />
+<img src="error-03.gif" width="104" height="112" /></p>
+<p>とおけば，等しくなります．<br />
+つまり，誤差関数とは（私の理解では），  <br />
+　標準偏差が1/2<sup>0.5</sup>≒0.71である正規分布の原点からaまでの領域の割合<br />
+と言うことができます．</p>
+<p><img src="error-01.jpg" width="529" height="425" /></p>
+<p>では，σ，の標準偏差を持つ正規分布の場合，0からaまでの範囲での割合を誤差関数で表してみましょう．</p>
+<p><span class="style10"><a href="index.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="error-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+</body>
+</html>

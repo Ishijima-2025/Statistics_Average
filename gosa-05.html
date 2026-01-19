@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無題ドキュメント</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p><span class="Large-Bold-RED">直線近似の場合の誤差の推定の検証（その１）</span></p>
+<p>まずは適当なデータセットを用意します．</p>
+<table width="200" border="1">
+  <tr>
+    <td>x</td>
+    <td>y</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>3.0</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>4.2</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>5.8</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>6.2</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>6.8</td>
+  </tr>
+</table>
+<p>エクセルでグラフを作成すると，</p>
+<p><img src="gosa-01.png" width="475" height="349" /></p>
+<p>と切片あり，なしでの近似式を導き出すことができます．<br />
+では，このパラメータの誤差はどうなるでしょう？</p>
+<p class="Large-Bold-RED">切片あり</p>
+<p>それぞれのパラメータの誤差は，</p>
+<p><img src="gosa-25.gif" width="125" height="113" /></p>
+<p>となります．x<sup>2</sup>を求めると，</p>
+<table width="278" border="1">
+  <tr>
+    <td width="22">x</td>
+    <td width="36">y</td>
+    <td width="22">x2</td>
+    <td width="36">xy</td>
+    <td width="57">fit</td>
+    <td width="65">(fit-y)<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>3.0</td>
+    <td>1</td>
+    <td>3.0</td>
+    <td>3.28</td>
+    <td>0.0784</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>4.2</td>
+    <td>4</td>
+    <td>8.4</td>
+    <td>4.24</td>
+    <td>0.0016</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>5.8</td>
+    <td>9</td>
+    <td>17.4</td>
+    <td>5.20</td>
+    <td>0.36</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>6.2</td>
+    <td>16</td>
+    <td>24.8</td>
+    <td>6.16</td>
+    <td>0.0016</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>6.8</td>
+    <td>25</td>
+    <td>34.0</td>
+    <td>7.12</td>
+    <td>0.1024</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>26.0</td>
+    <td>55</td>
+    <td>87.6</td>
+    <td>&nbsp;</td>
+    <td>0.544</td>
+  </tr>
+</table>
+<p>です．一番下の行は総和です．</p>
+<p><img src="gosa-35.gif" width="431" height="103" /></p>
+<p>と計算できるので，</p>
+<p><img src="gosa-36.gif" width="240" height="70" /></p>
+<p>と計算できます．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-RED">切片なし</p>
+<p>パラメータの誤差は，</p>
+<p><img src="gosa-27.gif" width="100" height="65" /></p>
+<p>となります．x<sup>2</sup>を求めると，</p>
+<table width="278" border="1">
+  <tr>
+    <td width="22">x</td>
+    <td width="36">y</td>
+    <td width="22">x2</td>
+    <td width="36">xy</td>
+    <td width="57">fit</td>
+    <td width="65">(fit-y)<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>3.0</td>
+    <td>1</td>
+    <td>3.0</td>
+    <td>1.59</td>
+    <td>1.98</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>4.2</td>
+    <td>4</td>
+    <td>8.4</td>
+    <td>3.19</td>
+    <td>1.03</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>5.8</td>
+    <td>9</td>
+    <td>17.4</td>
+    <td>4.78</td>
+    <td>1.04</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>6.2</td>
+    <td>16</td>
+    <td>24.8</td>
+    <td>6.37</td>
+    <td>0.03</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>6.8</td>
+    <td>25</td>
+    <td>34.0</td>
+    <td>7.96</td>
+    <td>1.35</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>26.0</td>
+    <td>55</td>
+    <td>87.6</td>
+    <td>&nbsp;</td>
+    <td>5.44</td>
+  </tr>
+</table>
+<p>です．一番下の行は総和です．</p>
+<p><img src="gosa-37.gif" width="331" height="70" /></p>
+<p>ですので，</p>
+<p><img src="gosa-38.gif" width="183" height="33" /></p>
+<p>となります．</p>
+<p>では，この結果が，正しいかを検証しましょう．</p>
+<p><span class="style7"><a href="gosa-04.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="gosa-06.html"><img src="R-arrow.png" alt="r" width="57" height="34" border="0" /></a></span></p>
+<p>&nbsp;</p>
+</body>
+</html>

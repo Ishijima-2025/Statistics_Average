@@ -1,0 +1,65 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+	
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">共分散，相関係数</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p class="Large-Bold-Red">・共分散</p>
+<p>式で表すと，</p>
+<p>\( \Large     Cov[X,Y] = E[ (x_i - \mu_x) \cdot ( y_i - \mu_y)]\)</p>
+<p>X,Yが独立の場合（<a href="https://ikuty.com/2018/10/17/covariance_zero/" target="_blank">ここ</a>，を参考にしました），</p>
+<p>\( \Large     \begin{eqnarray} Cov[X,Y] &amp;=&amp; E[ x_i  \cdot  y_i - x_i  \cdot  \mu_y - \mu_x  \cdot  y_i + \mu_x  \cdot  \mu_y ] \\<br>
+&amp;=&amp; E[ x_i  \cdot  y_i] - E[x_i  \cdot  \mu_y] - E[\mu_x  \cdot  y_i] + E[\mu_x  \cdot  \mu_y ] \\<br>
+&amp;=&amp; E[ x_i  \cdot  y_i] -  \mu_y \cdot E[x_i  ] - \mu_x  \cdot E[  y_i] + \mu_x  \cdot  \mu_y  \\<br>
+&amp;=&amp; E[ x_i  \cdot  y_i] -  \mu_y \cdot \mu_x - \mu_x  \cdot \mu_y + \mu_x  \cdot  \mu_y  \\<br>
+\end{eqnarray}  \)  </p>
+<p>X,Yが独立の場合，\( \Large      E[ x_i  \cdot  y_i ] = E[x_i] \cdot E[y_i] \)，であるので，</p>
+<p>\( \Large     Cov[X,Y] = \mu_x \cdot \mu_y -  \mu_y \cdot \mu_x - \mu_x  \cdot \mu_y + \mu_x  \cdot  \mu_y = 0 \)</p>
+<p>となります．</p>
+<p class="Large-Bold-Red">・相関係数</p>
+<p>x<sub>i</sub>, y<sub>i</sub>の平均はそれぞれ，
+    （<a href="https://oceanone.hatenablog.com/entry/2020/04/15/010944" target="_blank">ここ</a>，を参考にしました，ありがとうございます．）</p>
+<p>\( \Large     \bar{x} = \frac{1}{n} \displaystyle \sum_{i=1}^n x_i \)</p>
+<p>\( \Large     \bar{y} = \frac{1}{n} \displaystyle \sum_{i=1}^n y_i \)</p>
+<p>これは（1/nを無視すると）ｎ次元のベクトルの内積となります．</p>
+<p>\( \Large     X = (x_1 - \bar{x}, \ x_2 - \bar{x}, \cdots , x_n - \bar{x} )\)</p>
+<p>\( \Large     X = (y_1 - \bar{y}, \ y_2 - \bar{y}, \cdots , y_n - \bar{y} )\)</p>
+<p>内積の公式から，</p>
+<p>\( \Large     X \cdot Y = |X||Y| \ cos \theta \)</p>
+<p>\( \Large     \frac{X \cdot Y}{ |X||Y|} =  cos \theta \)</p>
+<p>となり，<span class="Red-Bold">－1～1に規格化</span>されます．これが<span class="Red-Bold">相関係数</span>です．</p>
+<p>\( \Large     R = \frac{\frac{1}{n} \displaystyle \sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\frac{1}{n} \displaystyle \sum_{i=1}^n (x_i - \bar{x})^2}\sqrt{\frac{1}{n} \displaystyle \sum_{i=1}^n (y_i - \bar{y})^2}} \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="variance-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a><a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

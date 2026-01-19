@@ -1,0 +1,171 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+		<meta charset="UTF-8">
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>regression analysis</title>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">直線近似の各推定値の誤差-01</p>
+<p class="Large-Bold-Red">&nbsp;</p>
+<p>直線近似の推定については，<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/kinji-02.html">ここ</a>，にまとめてあります．</p>
+<p>では，各パラメータ，a, bはどの程度の誤差を持つものでしょうか？</p>
+<p>\( \Large y = ax+b \)</p>
+<p>で考えていきましょう．</p>
+<p>ここでは，<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/gosa-01.html">誤差伝搬法則</a>，を使います．</p>
+<p>また，<a href="http://www.i.ci.ritsumei.ac.jp/~shirai/sensing-3.pdf" target="_blank">こちら</a>，を参考にさせていただきました，ありがとうございます．</p>
+<p>&nbsp;</p>
+<p class="Blue-Bold">・最小自乗</p>
+<p>直線近似の場合の最小自乗は，<a href="kinji-005.html">ここ</a>，にあるように，</p>
+<p>\( \Large a = \frac{N \displaystyle \sum_{i=1}^N x_i y_i - \displaystyle \sum_{i=1}^N x_i \displaystyle \sum_{i=1}^N y_i }{\Delta} =  \displaystyle \frac{ S_{xy} }{ S_{xx}} \)</p>
+<p>\( \Large b = \frac{  \displaystyle \sum_{i=1}^N x_i^2 \displaystyle \sum_{i=1}^N y_i - \displaystyle \sum_{i=1}^N x_i y_i  \displaystyle \sum_{i=1}^N x_i}{\Delta} <br>
+=    \displaystyle \overline{y} - \frac{ S_{xy} }{ S_{xx}} \overline{x}\)</p>
+<p>\( \Large \Delta = N \displaystyle \sum_{i=1}^N x_i^2  - \left( \displaystyle \sum_{i=1}^N x_i \right)^2  = n S_{xx} \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Blue-Bold">・誤差伝搬法則</p>
+<p>誤差伝搬法則は，<a href="https://www.fbs.osaka-u.ac.jp/labs/ishijima/gosa-02.html">ここ</a>，にあるように，</p>
+<p>\( \Large \sigma_y = \sqrt{ \left( \frac{ \partial f}{ \partial x_1} \sigma_1 \right)^2 +   \left( \frac{ \partial f}{ \partial x_2} \sigma_2 \right)^2 +\cdots + \left( \frac{ \partial f}{ \partial x_n} \sigma_n \right)^2}\)</p>
+<p>となります．</p>
+<p>したがって，推定値，a，bの誤差はｘ，ｙそれぞれの誤差の伝搬と言えるわけです．</p>
+<p>&nbsp;</p>
+<p class="Blue-Bold">・aの推定誤差</p>
+<p>aの誤差伝搬は，</p>
+<p>\( \Large \sigma_a = \sqrt{  \displaystyle \sum_{i=1}^N \left( \frac{ \partial a}{ \partial x_i} \sigma_x \right)^2 + \displaystyle \sum_{i=1}^N\left( \frac{ \partial a}{ \partial y_i} \sigma_y \right)^2}\)</p>
+<p>となります，これを解けばいいのですが，どう考えても計算は複雑になります．</p>
+<p>しかし，ここで大きな仮定，<span class="Large-Bold-Blue">”ｘには誤差はなく，ｙのみに誤差がある”</span>，とします．これはそれほど無理のあることではなく，実際の実験ではよくあるパターンです．</p>
+<p>例えば，”一定時刻ごとの測定値”のように，”一定時刻”より，”測定値”のほうが明らかに測定誤差を含む場合ですね．</p>
+<p>となると，<span class="Red-Bold">誤差伝搬の第一項はｘの誤差なので，０となります！</span>，さらには<span class="Red-Bold">分母の⊿も微分とは関係なくなり</span>，</p>
+<p>\( \Large  \begin{eqnarray} \sigma_a &amp;=&amp;  \sqrt{  \displaystyle \sum_{i=1}^N \left( \frac{ \partial a}{ \partial y_i} \sigma_y \right)^2} \\<br> 
+  &amp;=&amp;  \frac{ \sigma_y}{ \Delta} 
+\sqrt{  \displaystyle \sum_{i=1}^N \left[ \frac{ \partial }{ \partial y_i} \left(N \displaystyle \sum_{i=1}^N x_i y_i - \displaystyle \sum_{i=1}^N x_i \displaystyle \sum_{i=1}^N y_i \right) \right]^2 }  \\<br>
+\end{eqnarray} \)</p>
+<p>となります．</p>
+<p>ルートの中のｙの偏微分は，</p>
+<p>\( \Large  \begin{eqnarray}   \displaystyle \sum_{i=1}^N \left[ \frac{ \partial }{ \partial y_i} \left(N \displaystyle \sum_{i=1}^N x_i y_i - \displaystyle \sum_{i=1}^N x_i \displaystyle \sum_{i=1}^N y_i \right) \right]^2   
+   &amp;=&amp; 
+   \displaystyle \sum_{i=1}^N \left[ \frac{ \partial }{ \partial y_i} \left\{ N ( x_1 y_1 +x_2 y_2 + \cdots ) - (x_1 + x_2 + \cdots )(y_1 + y_2 + \cdots) \right\} \right]^2   \\<br>
+   &amp;=&amp; 
+   \displaystyle \sum_{i=1}^N \left[  N  x_i - \left( \displaystyle \sum x \right) \right]^2   \\ <br>
+   &amp;=&amp; 
+\displaystyle N^2 \sum_{i=1}^N   x_i^2 - 2N ( \displaystyle \sum x )^2 +N ( \displaystyle \sum x )^2    \\<br>
+&amp;=&amp; 
+   \displaystyle N \left( N \sum_{i=1}^N   x_i^2 -  ( \displaystyle \sum x )^2 \right)   \\ <br>
+   &amp;=&amp; N \Delta \\
+   <br>
+\end{eqnarray} \)</p>
+<p>\( \Large  \begin{eqnarray} \sigma_a &amp;=&amp;  \frac{ \sigma_y}{ \Delta} 
+\sqrt{  N \Delta} \\<br>
+&amp;=&amp; 
+\sigma_y  
+\sqrt{  \frac{ N}{ \Delta}} \\<br>
+\end{eqnarray} \)</p>
+<p>もしくは，分散として，</p>
+<p>\( \Large    \displaystyle \sigma_a^2  = 
+  \sigma_y^2  
+    \frac{ N}{ \Delta} 
+  \)</p>
+<p>となります．ここで，</p>
+<p>\( \Large    \displaystyle \sigma_y^2  = 
+  \sum_{i=1}^N ( y_i - \hat{y})^2
+\)</p>
+<p>ですので，</p>
+<p>\( \Large    \displaystyle \sigma_a^2  =\sigma_y^2  
+    \frac{ N}{N S_{xx}} 
+\)</p>
+<p>\( \Large    = \displaystyle   
+    \frac{ \sigma_y^2}{S_{xx}} 
+\)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Blue-Bold">・ｂの推定誤差</p>
+<p>bの誤差伝搬は，</p>
+<p>\( \Large \sigma_b = \sqrt{  \displaystyle \sum_{i=1}^N \left( \frac{ \partial b}{ \partial x_i} \sigma_x \right)^2 + \displaystyle \sum_{i=1}^N\left( \frac{ \partial b}{ \partial y_i} \sigma_y \right)^2}\)</p>
+<p>となります，同様にｙのみに誤差があるとして，</p>
+<p>\( \Large  \begin{eqnarray} \sigma_b &amp;=&amp;  \sqrt{  \displaystyle \sum_{i=1}^N \left( \frac{ \partial b}{ \partial y_i} \sigma_y \right)^2} \\<br>
+&amp;=&amp;  \frac{ \sigma_y}{ \Delta} 
+\sqrt{  \displaystyle \sum_{i=1}^N \left[ \frac{ \partial }{ \partial y_i} \left( \displaystyle \sum_{i=1}^N x_i^2 \displaystyle \sum_{i=1}^N y_i - \displaystyle \sum_{i=1}^N x_i y_i \displaystyle \sum_{i=1}^N x_i  \right) \right]^2 }  \\<br>
+\end{eqnarray} \)</p>
+<p>ルートの中のｙの偏微分は，</p>
+<p>\( \Large  \begin{eqnarray}   \displaystyle \sum_{i=1}^N \left[ \frac{ \partial }{ \partial y_i} \left( \displaystyle \sum_{i=1}^N x_i^2 \displaystyle \sum_{i=1}^N y_i - \displaystyle \sum_{i=1}^N x_i y_i \displaystyle \sum_{i=1}^N x_i  \right) \right]^2<br>
+&amp;=&amp; 
+  \displaystyle \sum_{i=1}^N \left[ \frac{ \partial }{ \partial y_i} \left\{  ( x_1^2  +x_2^2 + \cdots ) (y_1 + y_2 + \cdots) - (x_1 y_1 + x_2 y_2 + \cdots)(x_1 + x_2 + \cdots ) \right\} \right]^2   \\<br>
+  &amp;=&amp; 
+  \displaystyle \sum_{i=1}^N \left[  \left( \displaystyle \sum x^2 \right) - x_i \left( \displaystyle \sum x \right) \right]^2   \\ <br>
+  &amp;=&amp; 
+  \displaystyle  \sum_{i=1}^N \left[ (\displaystyle \sum x^2)^2 -2 x_i (\displaystyle \sum x) (\displaystyle \sum x^2) + x_i^2 (\displaystyle \sum x) ^2     \right] \\<br>
+  &amp;=&amp; N(\displaystyle \sum x^2)^2 - 2  (\displaystyle \sum x)^2 (\displaystyle \sum x^2) +  (\displaystyle \sum x^2) (\displaystyle \sum x) ^2      \\<br>
+  &amp;=&amp; N(\displaystyle \sum x^2)^2 -   (\displaystyle \sum x^2) (\displaystyle \sum x) ^2      \\ <br>
+  &amp;=&amp; (\displaystyle \sum x^2) \left[ N(\displaystyle \sum x^2) -    (\displaystyle \sum x) ^2      \right] \\ <br>
+  &amp;=&amp; (\displaystyle \sum x^2) \Delta \\  <br>
+  \end{eqnarray} \)</p>
+<p>\( \Large  \begin{eqnarray} \sigma_b &amp;=&amp;  \frac{ \sigma_y}{ \Delta} 
+\sqrt{  (\displaystyle \sum x^2) \Delta} \\<br>
+&amp;=&amp; 
+\sigma_y  
+\sqrt{  \frac{ \displaystyle \sum x^2}{ \Delta}} \\<br>
+\end{eqnarray} \)</p>
+<p>となります．</p>
+<p>もしくは，分散として，</p>
+<p>\( \Large    \displaystyle \sigma_b^2= 
+\sigma_y^2  
+  \frac{ \displaystyle \sum x^2}{ \Delta} \)</p>
+<p>\( \Large    \displaystyle \sigma_b^2= 
+\sigma_y^2  
+\frac{ \displaystyle \sum x^2}{ n S_{xx}} = 
+\sigma_y^2  
+\frac{ n \overline{ x^2}}{ n S_{xx}}= 
+\sigma_y^2  
+\frac{  \overline{ x^2}}{  S_{xx}}\)</p>
+<p>となりますが，ちょっと工夫をして，</p>
+<p>\( \Large         \displaystyle S_{xx} = \displaystyle \sum_{i=1}^n (x_i - \bar{x})^2 = n \left\{ \overline{x^2} - \left( \bar{x} \right)^2 \right\} \)</p>
+<p>\( \Large         \displaystyle \overline{x^2} = \frac{S_{xx}}{n}+ \left( \bar{x} \right)^2  \)</p>
+<p>から，</p>
+<p>\( \Large    \displaystyle \sigma_b^2 = 
+\sigma_y^2  
+\frac{  \overline{ x^2}}{  S_{xx}}=\sigma_y^2  
+\left[ \frac{1}{S_{xx}} \left\{ \frac{S_{xx}}{n}+ \left( \bar{x} \right)^2 \right\} \right]\)</p>
+<p>\( \Large    \displaystyle =\sigma_y^2  
+ \left\{ \frac{1}{n}+ \frac{\left( \bar{x} \right)^2 }{S_{xx}} \right\} \)</p>
+<p>とも書けます．</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Red">推定誤差</span>は，</p>
+<p>\( \Large    \displaystyle SE_a =\sqrt{\frac{\sigma_a^2}{n-p}} \)</p>
+<p>\( \Large    \displaystyle SE_b =\sqrt{\frac{\sigma_b^2}{n-p}} \)</p>
+<p>となります．線形近似の場合には<span class="Red-Bold">パラメータが2個</span>なので，<span class="Large-Bold-Red">p=2</span>，となります（<span class="Blue-Bold">ここら辺の理論的背景はちょっと不安．．．</span>．）</p>
+<p>したがって，</p>
+<p>\( \Large    \displaystyle SE_a =\sqrt{\frac{\sigma_a^2}{n-2}} \)</p>
+<p>\( \Large    \displaystyle SE_b =\sqrt{\frac{\sigma_b^2}{n-2}} \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>次ページに，実際の数値を入力して計算してみましょう．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="kenkyu.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="gosa-12.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
